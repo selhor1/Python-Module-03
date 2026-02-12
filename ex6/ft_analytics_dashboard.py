@@ -10,32 +10,24 @@ def main() -> None:
     }
     regions = ["north", "east", "central", "north"]
 
-    # === Analytics Dashboard ===
     print("=== Game Analytics Dashboard ===")
 
-    # === List Comprehension Examples ===
     print("\n=== List Comprehension Examples ===")
 
-    # High scorers > 2000
     high_scorers = [players[i] for i in range(len(players)) if scores[i] > 2000]
     print("High scorers (>2000):", high_scorers)
 
-    # Scores doubled
     scores_doubled = [score * 2 for score in scores]
     print("Scores doubled:", scores_doubled)
 
-    # Active players (score > 0)
     active_players = [players[i] for i in range(len(players)) if scores[i] > 0]
     print("Active players:", active_players)
 
-    # === Dict Comprehension Examples ===
     print("\n=== Dict Comprehension Examples ===")
 
-    # Player scores mapping
     player_scores = {players[i]: scores[i] for i in range(len(players))}
     print("Player scores:", player_scores)
 
-    # Score categories
     score_categories = {
         "high": len([s for s in scores if s > 2000]),
         "medium": len([s for s in scores if 1800 <= s <= 2000]),
@@ -43,27 +35,21 @@ def main() -> None:
     }
     print("Score categories:", score_categories)
 
-    # Achievement counts
     achievement_counts = {player: len(achievements[player]) for player in players}
     print("Achievement counts:", achievement_counts)
 
-    # === Set Comprehension Examples ===
     print("\n=== Set Comprehension Examples ===")
 
-    # Unique players
     unique_players = {player for player in players}
     print("Unique players:", unique_players)
 
-    # Unique achievements
     unique_achievements = {ach for ach_list in achievements.values()
                            for ach in ach_list}
     print("Unique achievements:", unique_achievements)
 
-    # Active regions
     active_regions = {region for region in regions}
     print("Active regions:", active_regions)
 
-    # === Combined Analysis ===
     print("\n=== Combined Analysis ===")
 
     total_players = len(unique_players)
